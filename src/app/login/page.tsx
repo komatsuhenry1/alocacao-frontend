@@ -22,7 +22,7 @@ export default function Login() {
             <p className="text-neutral-500 text-sm mt-2">Entre na sua conta</p>
           </div>
 
-          <form onSubmit={() => router.push("/alocacao")} className="space-y-5">
+          <form onSubmit={(e) => { e.preventDefault(); router.push("/alocacao"); }} className="space-y-5">
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium text-neutral-700">
                 Email
@@ -62,13 +62,6 @@ export default function Login() {
               Entrar
             </Button>
           </form>
-
-          <p className="text-center text-sm text-neutral-500 mt-6">
-            Não tem uma conta?{" "}
-            <Link href="/cadastro" className="text-neutral-900 font-medium hover:underline">
-              Cadastre-se
-            </Link>
-          </p>
         </div>
       </div>
     </main>
