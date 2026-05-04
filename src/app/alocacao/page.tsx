@@ -35,7 +35,7 @@ interface Alocacao {
   status: number; // 0 = Ativo, 1 = Finalizado (depende do enum, mas assumimos algo numérico)
 }
 
-const API_URL = "http://localhost:5103/api/v1/Alocacao";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Alocacao`;
 
 export default function AlocacaoList() {
   const [alocacoes, setAlocacoes] = useState<Alocacao[]>([]);

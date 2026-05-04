@@ -21,6 +21,18 @@ export default function Header() {
           
           <nav className="hidden md:flex space-x-6">
             <Link 
+              href="/veiculo" 
+              className={`hover:text-neutral-300 transition-colors ${pathname.startsWith("/veiculo") && pathname !== "/veiculo/catalogo" ? "font-semibold text-white" : "text-neutral-400"}`}
+            >
+              Veículos
+            </Link>
+            <Link 
+              href="/veiculo/catalogo" 
+              className={`hover:text-neutral-300 transition-colors ${pathname === "/veiculo/catalogo" ? "font-semibold text-white" : "text-neutral-400"}`}
+            >
+              Catálogo
+            </Link>
+            <Link 
               href="/alocacao" 
               className={`hover:text-neutral-300 transition-colors ${pathname.startsWith("/alocacao") ? "font-semibold text-white" : "text-neutral-400"}`}
             >
@@ -31,12 +43,6 @@ export default function Header() {
               className={`hover:text-neutral-300 transition-colors ${pathname.startsWith("/cliente") ? "font-semibold text-white" : "text-neutral-400"}`}
             >
               Clientes
-            </Link>
-            <Link 
-              href="/veiculo" 
-              className={`hover:text-neutral-300 transition-colors ${pathname.startsWith("/veiculo") ? "font-semibold text-white" : "text-neutral-400"}`}
-            >
-              Veículos
             </Link>
             <Link 
               href="/categoria" 

@@ -18,7 +18,7 @@ interface Cliente {
   criadoEm: string;
 }
 
-const API_URL = "http://localhost:5103/api/v1/Cliente";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Cliente`;
 
 export default function ClienteView() {
   const [cliente, setCliente] = useState<Cliente | null>(null);

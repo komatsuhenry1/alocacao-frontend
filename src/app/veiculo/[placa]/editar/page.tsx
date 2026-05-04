@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 
-const API_URL = "http://localhost:5103/api/v1/Veiculo";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Veiculo`;
 
 export default function VeiculoEdit() {
   const router = useRouter();

@@ -15,7 +15,7 @@ interface Categoria {
   ativo: boolean;
 }
 
-const API_URL = "http://localhost:5103/api/v1/Categoria";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Categoria`;
 
 export default function CategoriaView() {
   const [categoria, setCategoria] = useState<Categoria | null>(null);

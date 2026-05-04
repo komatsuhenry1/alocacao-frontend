@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { toast } from "sonner";
 
-const API_URL = "http://localhost:5103/api/v1/Alocacao";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Alocacao`;
 
 export default function AlocacaoEdit() {
   const router = useRouter();

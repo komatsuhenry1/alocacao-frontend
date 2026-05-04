@@ -35,7 +35,13 @@ interface Veiculo {
   status: number;
 }
 
-const API_URL = "http://localhost:5103/api/v1/Veiculo";
+const STATUS_LABEL: Record<number, string> = {
+  1: "Disponível",
+  2: "Alugado",
+  3: "Inativo",
+};
+
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Veiculo`;
 
 export default function VeiculoList() {
   const [veiculos, setVeiculos] = useState<Veiculo[]>([]);
@@ -98,13 +104,14 @@ export default function VeiculoList() {
               <TableHead>Marca</TableHead>
               <TableHead>Ano</TableHead>
               <TableHead>Cor</TableHead>
+              <TableHead>Status</TableHead>
               <TableHead className="text-right">Ações</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {veiculos.length === 0 ? (
               <TableRow>
-                <TableCell colSpan={6} className="text-center">
+                <TableCell colSpan={7} className="text-center">
                   Nenhum veículo encontrado.
                 </TableCell>
               </TableRow>
@@ -116,16 +123,17 @@ export default function VeiculoList() {
                   <TableCell>{v.marca}</TableCell>
                   <TableCell>{v.ano}</TableCell>
                   <TableCell>{v.cor}</TableCell>
+                  <TableCell>{STATUS_LABEL[v.status] ?? v.status}</TableCell>
                   <TableCell className="text-right space-x-2">
-                    <Button variant="outline" size="icon" onClick={() => router.push(`/veiculo/${v.placa}`)}>
+                    <Button variant="outline" size="icon" onClick={() => router.push(`/veiculo/${v.placa}`)} title="Visualizar">
                       <Eye className="h-4 w-4" />
                     </Button>
-                    <Button variant="outline" size="icon" onClick={() => router.push(`/veiculo/${v.placa}/editar`)}>
+                    <Button variant="outline" size="icon" onClick={() => router.push(`/veiculo/${v.placa}/editar`)} title="Editar">
                       <Pencil className="h-4 w-4" />
                     </Button>
                     <AlertDialog>
                       <AlertDialogTrigger asChild>
-                        <Button variant="destructive" size="icon" onClick={() => setItemToDelete(v.placa)}>
+                        <Button variant="destructive" size="icon" onClick={() => setItemToDelete(v.placa)} title="Excluir">
                           <Trash2 className="h-4 w-4" />
                         </Button>
                       </AlertDialogTrigger>

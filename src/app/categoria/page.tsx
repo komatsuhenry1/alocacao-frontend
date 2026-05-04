@@ -33,7 +33,7 @@ interface Categoria {
   ativo: boolean;
 }
 
-const API_URL = "http://localhost:5103/api/v1/Categoria";
+const API_URL = "https://api-locadora-dev.nicebay-5f61446e.centralus.azurecontainerapps.io/api/v1/Categoria";
 
 export default function CategoriaList() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);

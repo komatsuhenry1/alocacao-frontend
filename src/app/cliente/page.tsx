@@ -33,7 +33,7 @@ interface Cliente {
   telefone: string;
 }
 
-const API_URL = "http://localhost:5103/api/v1/cliente";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/cliente`;
 
 export default function ClienteList() {
   const [clientes, setClientes] = useState<Cliente[]>([]);

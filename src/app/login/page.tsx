@@ -22,7 +22,7 @@ export default function Login() {
             <p className="text-neutral-500 text-sm mt-2">Entre na sua conta</p>
           </div>
 
-          <form onSubmit={(e) => { e.preventDefault(); router.push("/alocacao"); }} className="space-y-5">
+          <form onSubmit={(e) => { e.preventDefault(); router.push("/veiculo"); }} className="space-y-5">
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium text-neutral-700">
                 Email

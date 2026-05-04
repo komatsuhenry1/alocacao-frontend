@@ -18,7 +18,7 @@ interface Alocacao {
   criadoEm: string;
 }
 
-const API_URL = "http://localhost:5103/api/v1/Alocacao";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Alocacao`;
 
 export default function AlocacaoView() {
   const [alocacao, setAlocacao] = useState<Alocacao | null>(null);

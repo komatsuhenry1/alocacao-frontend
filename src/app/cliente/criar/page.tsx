@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Save } from "lucide-react";
 import { toast } from "sonner";
 
-const API_URL = "http://localhost:5103/api/v1/Cliente";
+const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/Cliente`;
 
 export default function ClienteCriar() {
   const router = useRouter();
